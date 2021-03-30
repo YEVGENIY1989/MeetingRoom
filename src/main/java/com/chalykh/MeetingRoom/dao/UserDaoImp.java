@@ -44,8 +44,6 @@ public class UserDaoImp implements UserDao {
         User user = jdbcOperations.queryForObject("select * from user_meeting_room where name= :names",
                 params, new UserMapper());
 
-        System.out.println(user.getPassword());
-
         return null;
     }
 
