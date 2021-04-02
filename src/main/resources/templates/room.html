@@ -1,9 +1,58 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Example</title>
-</head>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<title>Example</title>
+
 <body>
 <p>This is an example of a simple HTML page with one paragraph.</p>
+
+<style>
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 100px;
+        grid-column-start: 1;
+        grid-column-end: 8;
+        grid-row-start: 1;
+        grid-row-end: 48;
+    }
+    .box1 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    .box2 {
+        grid-column-start: 1;
+        grid-row-start: 3;
+        grid-row-end: 5;
+    }
+</style>
+
+
+<table>
+    <tr th:each = "dayOfWeek : ${day}"  >
+        <td> <b th:text = ${dayOfWeek}></b>      </td>
+
+    </tr>
+    <tr>
+     <td>00:00</td>
+    </tr>
+    <tr>
+        <td>00:30</td>
+    </tr>
+    <tr>
+        <td>01:00</td>
+    </tr>
+    <tr>
+        <td>01:30</td>
+    </tr>
+    <tr>
+        <td>00:00</td>
+    </tr>
+
+    </tr>
+    <table>
+
 </body>
 </html>

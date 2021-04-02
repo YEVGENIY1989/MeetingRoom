@@ -37,9 +37,8 @@ public class AutorizationController {
     @PostMapping()
     public String goToRoom(@ModelAttribute("user") User user){
 
-
-        System.out.println(user.getPassword());
-        return "room.html";
+        System.out.println(user.getPassword() + " " + user.getName());
+        return "redirect:/meetingRoom";
     }
 
 }
