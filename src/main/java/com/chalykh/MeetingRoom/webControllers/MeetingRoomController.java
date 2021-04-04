@@ -8,27 +8,24 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDateTime;
+
 @Controller
-@RequestMapping("meetingRoom")
+@RequestMapping("/meetingRoom")
 public class MeetingRoomController {
 
-
-    private CreateDateAndTime createDateAndTime;
+    private CreateDateAndTime dateAndTime;
 
     @Autowired
-    public MeetingRoomController(CreateDateAndTime createDateAndTime){
-
-        this.createDateAndTime = createDateAndTime;
-
-
+    public MeetingRoomController(CreateDateAndTime dateAndTime){
+        this.dateAndTime = dateAndTime;
     }
 
-    @GetMapping
+    @GetMapping()
     public String meetingRoom(Model model){
 
-
-        model.addAttribute("day", createDateAndTime.getArrayDayOfWeek());
-
+        model.addAttribute("day", dateAndTime.getArrayDayOfWeek() );
+        model.addAttribute("localDateTime", LocalDateTime.now());
 
         return "room.html";
     }

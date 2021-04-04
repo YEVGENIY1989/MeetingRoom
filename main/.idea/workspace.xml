@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02464647-d07e-49c4-b927-3714855b82bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../MeetingRoom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,17 +39,17 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\java\spring\meetingRoom\main\src\main\resources" />
-      <recent name="D:\java\spring\meetingRoom\main\src\main\resources\templates" />
-      <recent name="D:\java\spring\meetingRoom\main\src\main\resources\static" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.meetingRoom.main" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\java\spring\meetingRoom\main\src\main\resources\templates" />
       <recent name="D:\java\spring\meetingRoom\main\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\java\spring\meetingRoom\main\src\main\resources" />
+      <recent name="D:\java\spring\meetingRoom\main\src\main\resources\templates" />
+      <recent name="D:\java\spring\meetingRoom\main\src\main\resources\static" />
     </key>
   </component>
   <component name="RunManager">
@@ -76,6 +73,7 @@
       <updated>1616936925942</updated>
       <workItem from="1616936928744" duration="4668000" />
       <workItem from="1617039593390" duration="1188000" />
+      <workItem from="1617215275510" duration="732000" />
     </task>
     <servers />
   </component>
@@ -151,5 +149,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="347" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616939028439" />
+    <state x="1249" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617215898120">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1249" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1617215898120" />
   </component>
 </project>

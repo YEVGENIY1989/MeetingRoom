@@ -31,10 +31,13 @@
 
 
 <table>
-    <tr th:each = "dayOfWeek : ${day}"  >
-        <td> <b th:text = ${dayOfWeek}></b>      </td>
 
-    </tr>
+    <thead th:each = "dayOfWeek : ${day}">
+        <tr th:text = ${dayOfWeek} ></tr>
+        <td th:text="${#temporals.format(localDateTime, 'dd-MM-yyyy')}"> </td>
+    </thead>
+
+
     <tr>
      <td>00:00</td>
     </tr>
