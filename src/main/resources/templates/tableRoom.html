@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<title>Example</title>
+<style>table th, table td {padding: 5px;}</style>
+
+
+<body>
+
+
+
+
+<table border="1">
+    <tr th:each = "dayOfWeek : ${date}">
+        <th th:text = ${dayOfWeek}>Время</th>
+        <th th:text = ${dayOfWeek}>Понедельник</th>
+        <th th:text = ${dayOfWeek}>Вторник</th>
+        <th th:text = ${dayOfWeek}>Среда</th>
+        <th th:text = ${dayOfWeek}>Четверг</th>
+        <th th:text = ${dayOfWeek}>Пятница</th>
+        <th th:text = ${dayOfWeek}>Суббота</th>
+        <th th:text = ${dayOfWeek}>Воскресенье</th>
+    </tr >
+
+    <tbody>
+    <th:block th:each = "dayOfWeek : ${date}">
+        <tr th:text = ${dayOfWeek} ></tr>
+    </th:block>
+
+    </tbody>
+</table>
+
+
+</body>
+</html>

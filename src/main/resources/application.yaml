@@ -1,7 +1,7 @@
 Spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/meeting_room
+    url: jdbc:postgresql://localhost:5432/meeting_room
     username: postgres
     password: 89052809585leti
     initialization-mode: always

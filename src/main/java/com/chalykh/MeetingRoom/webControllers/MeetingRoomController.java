@@ -24,10 +24,10 @@ public class MeetingRoomController {
     @GetMapping()
     public String meetingRoom(Model model){
 
-        model.addAttribute("day", dateAndTime.getArrayDayOfWeek() );
-        model.addAttribute("localDateTime", LocalDateTime.now());
+        model.addAttribute("date", dateAndTime.getDateWeek());
 
-        return "room.html";
+
+        return "tableRoom.html";
     }
 
 }
