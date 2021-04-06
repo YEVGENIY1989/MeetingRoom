@@ -11,21 +11,35 @@
 
 
 <table border="1">
-    <tr th:each = "dayOfWeek : ${date}">
-        <th th:text = ${dayOfWeek}>Время</th>
-        <th th:text = ${dayOfWeek}>Понедельник</th>
-        <th th:text = ${dayOfWeek}>Вторник</th>
-        <th th:text = ${dayOfWeek}>Среда</th>
-        <th th:text = ${dayOfWeek}>Четверг</th>
-        <th th:text = ${dayOfWeek}>Пятница</th>
-        <th th:text = ${dayOfWeek}>Суббота</th>
-        <th th:text = ${dayOfWeek}>Воскресенье</th>
+    <tr >
+        <th >Время</th>
+        <th >Понедельник</th>
+        <th >Вторник</th>
+        <th >Среда</th>
+        <th >Четверг</th>
+        <th >Пятница</th>
+        <th >Суббота</th>
+        <th >Воскресенье</th>
     </tr >
 
+    <tr th:each = "time : ${dateData}">
+
+        <th th:text="${time}"></th>
+
+        <th >1</th>
+        <th >2</th>
+        <th >3</th>
+        <th >4</th>
+        <th >5</th>
+        <th >6</th>
+        <th >7</th>
+
+    </tr>
+
     <tbody>
-    <th:block th:each = "dayOfWeek : ${date}">
-        <tr th:text = ${dayOfWeek} ></tr>
-    </th:block>
+
+
+
 
     </tbody>
 </table>

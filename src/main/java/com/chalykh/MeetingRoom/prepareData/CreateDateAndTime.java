@@ -4,10 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Component
 public class CreateDateAndTime {
@@ -15,6 +12,7 @@ public class CreateDateAndTime {
     private List<String> arrayDayOfWeek;
     private List<String> timeOfDay;
     private List<String> dateWeek;
+    private Map<String, Map<String, Boolean>> reserveList;
 
 
     public CreateDateAndTime(){
@@ -29,11 +27,22 @@ public class CreateDateAndTime {
         arrayDayOfWeek.add("  Суббота");
         arrayDayOfWeek.add("  Воскресенье");
 
-        timeOfDay = new ArrayList<>(7);
+        timeOfDay = new ArrayList<>(24);
+
+        for(int i = 0 ; i <= 24; i++){
+
+            if(i < 10)
+                timeOfDay.add(String.format("00:%02d", i));
+            else
+                timeOfDay.add(String.format("%02d:00", i));
+
+        }
 
         updatesDateOfWeek();
-
+        createReserve();
     }
+
+
 
     public void updatesDateOfWeek(){
 
@@ -47,6 +56,31 @@ public class CreateDateAndTime {
             cal.add(Calendar.DAY_OF_WEEK, 1);
             date = cal.getTime();
             dateWeek.add(dateFormat.format(date));
+        }
+
+    }
+
+    public void createReserve(){
+
+        reserveList = new TreeMap<>();
+
+        for(int i = 0; i <= timeOfDay.size(); i++){
+
+            TreeMap<String, Boolean> ceil = new TreeMap<>();
+
+            for(int j = 0; j < 7; j++ ){
+
+
+                String str = dateWeek.get(j);
+                ceil.put(str, false);
+            }
+            String str = timeOfDay.get(i);
+            reserveList.put(str, ceil);
+
+        }
+
+        for (String s : reserveList.keySet()){
+            System.out.println(s);
         }
 
     }
