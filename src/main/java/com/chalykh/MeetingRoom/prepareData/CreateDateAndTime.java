@@ -63,26 +63,35 @@ public class CreateDateAndTime {
     public void createReserve(){
 
         reserveList = new TreeMap<>();
+        Random r = new Random();
 
-        for(int i = 0; i <= timeOfDay.size(); i++){
+        for(int i = 0; i < timeOfDay.size(); i++){
 
             TreeMap<String, Boolean> ceil = new TreeMap<>();
-
+            boolean bool;
             for(int j = 0; j < 7; j++ ){
 
-
+                bool = r.nextBoolean();
                 String str = dateWeek.get(j);
-                ceil.put(str, false);
+                ceil.put(str, bool);
             }
             String str = timeOfDay.get(i);
             reserveList.put(str, ceil);
 
         }
 
-        for (String s : reserveList.keySet()){
-            System.out.println(s);
-        }
 
+        /*for (String s : reserveList.keySet()){
+            Map<String, Boolean> map = reserveList.get(s);
+            for (String s1 : map.keySet()){
+                System.out.println(map.get(s1));
+            }
+        }*/
+
+    }
+
+    public Map<String, Map<String, Boolean>> getReserveList() {
+        return reserveList;
     }
 
     public List<String> getDateWeek() {

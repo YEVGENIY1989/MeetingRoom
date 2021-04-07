@@ -2,7 +2,11 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 
 <title>Example</title>
-<style>table th, table td {padding: 5px;}</style>
+<style>
+    table th, table td {padding: 5px;}
+    .booked{background-color:  #D32F2F}
+    .free{background-color: aliceblue}
+</style>
 
 
 <body>
@@ -11,29 +15,25 @@
 
 
 <table border="1">
-    <tr >
-        <th >Время</th>
-        <th >Понедельник</th>
-        <th >Вторник</th>
-        <th >Среда</th>
-        <th >Четверг</th>
-        <th >Пятница</th>
-        <th >Суббота</th>
-        <th >Воскресенье</th>
-    </tr >
 
-    <tr th:each = "time : ${dateData}">
+    <thead>
+        <tr >
+            <th >Время</th>
+            <th >Понедельник</th>
+            <th >Вторник</th>
+            <th >Среда</th>
+            <th >Четверг</th>
+            <th >Пятница</th>
+            <th >Суббота</th>
+            <th >Воскресенье</th>
+        </tr >
+    </thead>
 
-        <th th:text="${time}"></th>
-
-        <th >1</th>
-        <th >2</th>
-        <th >3</th>
-        <th >4</th>
-        <th >5</th>
-        <th >6</th>
-        <th >7</th>
-
+    <tr th:each = "reserve : ${reserveList}">
+        <td th:text = "${reserve.key}"></td>
+        <td th:each = "data : ${reserve.value}" th:class="${data.value} ? 'booked' : 'free'">
+            <p></p>
+        </td>
     </tr>
 
     <tbody>

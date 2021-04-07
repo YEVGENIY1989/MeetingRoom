@@ -24,7 +24,7 @@ public class MeetingRoomController {
     @GetMapping()
     public String meetingRoom(Model model){
 
-        model.addAttribute("dateData", dateAndTime.getTimeOfDay());
+        model.addAttribute("reserveList", dateAndTime.getReserveList());
 
 
         return "tableRoom.html";
