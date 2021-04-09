@@ -3,7 +3,6 @@ package com.chalykh.MeetingRoom.prepareData;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.*;
 
 @Component
@@ -40,6 +39,7 @@ public class CreateDateAndTime {
 
         updatesDateOfWeek();
         createReserve();
+
     }
 
 
@@ -59,6 +59,7 @@ public class CreateDateAndTime {
         }
 
     }
+
 
     public void createReserve(){
 

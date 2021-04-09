@@ -3,20 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+
+    <style>
+        #root{
+            padding: 20px;
+        }
+    </style>
+
 </head>
 <body>
 
-<form th:method="POST" th:action="@{/}" th:object="${user}">
+    <div id="root" align="center">
 
-    <label for="name">Enter name: </label>
-    <input type="text" th:field="*{name}" id="name"/>
-    <br/>
-    <label for="password">Enter password: </label>
-    <input type="text" th:field="*{password}" id="password"/>
-    <br/>
-    <input type="submit" value="Войти"/>
+        <form th:method="POST" th:action="@{/}" th:object="${user}">
 
-</form>
+            <label for="name">Enter name: </label>
+            <input type="text" th:field="*{name}" id="name"/>
+            <br/>
+            <label for="password">Enter password: </label>
+            <input type="text" th:field="*{password}" id="password"/>
+            <br/>
+
+            <input type="submit" value="Войти"/>
+
+        </form>
+
+</div>
 
 </body>
 

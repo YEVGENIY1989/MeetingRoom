@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table th, table td {padding: 5px;}
+        .booked{background-color:  #D32F2F}
+        .free{background-color: aliceblue}
+    </style>
+
+
+</head>
+<body>
+
+    <form action="#"
+          th:object="${room}"
+          method="post">
+
+
+
+    </form>
+
+
+    <table class="table">
+
+        <thead>
+        <tr>
+            <th >Время</th>
+            <th >Понедельник</th>
+            <th >Вторник</th>
+            <th >Среда</th>
+            <th >Четверг</th>
+            <th >Пятница</th>
+            <th >Суббота</th>
+            <th >Воскресенье</th>
+        </tr>
+        </thead>
+
+
+
+        <tbody>
+        <tr th:each = "reserve : *{reserveList}">
+            <td th:text = "${reserve.key}"></td>
+            <td> <input th:placeholder=" ${reserve.count}" th:field = "*{reserveList[__${reserve.index}__].comment}" required/>
+
+            </td>
+        </tr>
+
+
+        </tbody>
+
+    </table>
+
+</body>
+</html>

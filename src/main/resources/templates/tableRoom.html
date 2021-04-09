@@ -13,37 +13,56 @@
 
 
 
+    <div id = "root" >
 
-<table border="1">
+        <form method="post"
+            th:action = "@{/meetingRoom}"
+            th:object = "${reservInfo}">
 
-    <thead>
-        <tr >
-            <th >Время</th>
-            <th >Понедельник</th>
-            <th >Вторник</th>
-            <th >Среда</th>
-            <th >Четверг</th>
-            <th >Пятница</th>
-            <th >Суббота</th>
-            <th >Воскресенье</th>
-        </tr >
-    </thead>
+            <label> Начало </label>
+            <select th:field = "*{startTime}">
+                <option th:each="time : ${reservTimeList}" th:text = "${time}" th:value = "${time}">09:00</option>
+            </select>
 
-    <tr th:each = "reserve : ${reserveList}">
-        <td th:text = "${reserve.key}"></td>
-        <td th:each = "data : ${reserve.value}" th:class="${data.value} ? 'booked' : 'free'">
-            <p></p>
-        </td>
-    </tr>
+            <label> Конец </label>
+            <select th:field = "*{stopTime}">
+                <option th:each="time : ${reservTimeList}" th:text = "${time}" th:value = "${time}">09:00</option>
+            </select>
 
-    <tbody>
+            <input type="submit" value="Забронировать"/>
+
+        </form>
 
 
 
 
-    </tbody>
-</table>
+    <table border="1">
 
+        <thead>
 
+            <tr >
+                <th >Время</th>
+                <th >Понедельник</th>
+                <th >Вторник</th>
+                <th >Среда</th>
+                <th >Четверг</th>
+                <th >Пятница</th>
+                <th >Суббота</th>
+                <th >Воскресенье</th>
+            </tr >
+        </thead>
+
+        <tbody>
+        <tr th:each = "reserve : ${reserveList}">
+                <td th:text = "${reserve.key}"></td>
+                <td th:each = "data : ${reserve.value}" th:class="${data.value} ? 'booked' : 'free'">
+                    <p></p>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    </div>
 </body>
 </html>
