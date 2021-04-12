@@ -33,7 +33,9 @@ public class MeetingRoomController {
 
         model.addAttribute("reservInfo", reservInfo);
         model.addAttribute("reservTimeList", reservInfo.getTimeOfDay() );
+        model.addAttribute("dateWeek", reservInfo.getDateWeek());
         model.addAttribute("reserveList", dateAndTime.getReserveList());
+
         return "tableRoom.html";
     }
 
@@ -43,8 +45,9 @@ public class MeetingRoomController {
         Reserv reserv = new Reserv();
         reserv.setStartTime(reservInfo.getStartTime());
         reserv.setStopTime(reservInfo.getStopTime());
+        reserv.setCurrentDate(reservInfo.getCurrentDate());
 
-        System.out.println(reserv.getStartTime() + " " + reserv.getStopTime());
+        System.out.println(reserv.getStartTime() + " " + reserv.getStopTime() + " " + reserv.getCurrentDate());
 
         return "redirect:/meetingRoom";
     }

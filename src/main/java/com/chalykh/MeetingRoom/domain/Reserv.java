@@ -8,6 +8,7 @@ public class Reserv {
     private String startTime;
     private String stopTime;
     private List<String> timeOfDay;
+    private String currentDate;
 
 
     public Reserv(){
@@ -24,6 +25,14 @@ public class Reserv {
         }
 
 
+    }
+
+    public String getCurrentDate() {
+        return currentDate;
+    }
+
+    public void setCurrentDate(String currentDate) {
+        this.currentDate = currentDate;
     }
 
     public String getStartTime() {

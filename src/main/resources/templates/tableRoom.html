@@ -29,6 +29,11 @@
                 <option th:each="time : ${reservTimeList}" th:text = "${time}" th:value = "${time}">09:00</option>
             </select>
 
+            <label>Дата</label>
+            <select th:field = "*{currentDate}">
+                <option th:each = "date : ${dateWeek}" th:text = "${date}" th:value = "${date}">01.01.2020</option>
+            </select>
+
             <input type="submit" value="Забронировать"/>
 
         </form>
