@@ -11,6 +11,12 @@ public class Reserv {
     private String currentDate;
 
 
+    public Reserv(String startTime, String stopTime, String currentDate) {
+        this.startTime = startTime;
+        this.stopTime = stopTime;
+        this.currentDate = currentDate;
+    }
+
     public Reserv(){
 
         timeOfDay = new ArrayList<>(24);

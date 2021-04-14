@@ -1,6 +1,8 @@
 package com.chalykh.MeetingRoom.webControllers;
 
 
+import com.chalykh.MeetingRoom.dao.RoomDao;
+import com.chalykh.MeetingRoom.dao.RoomDaoImpl;
 import com.chalykh.MeetingRoom.domain.Reserv;
 import com.chalykh.MeetingRoom.domain.ReservInfo;
 import com.chalykh.MeetingRoom.domain.User;
@@ -20,10 +22,12 @@ import java.util.Map;
 public class MeetingRoomController {
 
     private CreateDateAndTime dateAndTime;
+    private RoomDao roomDao;
 
     @Autowired
-    public MeetingRoomController(CreateDateAndTime dateAndTime){
+    public MeetingRoomController(CreateDateAndTime dateAndTime, RoomDao roomDao){
         this.dateAndTime = dateAndTime;
+        this.roomDao = roomDao;
     }
 
     @GetMapping()
@@ -36,6 +40,10 @@ public class MeetingRoomController {
         model.addAttribute("dateWeek", reservInfo.getDateWeek());
         model.addAttribute("reserveList", dateAndTime.getReserveList());
 
+        for(Reserv reserv : roomDao.getAll()){
+            System.out.println("in RowMapping " + reserv.getStartTime() + " " + reserv.getStopTime() + " " + reserv.getCurrentDate());
+        }
+
         return "tableRoom.html";
     }
 
@@ -47,7 +55,9 @@ public class MeetingRoomController {
         reserv.setStopTime(reservInfo.getStopTime());
         reserv.setCurrentDate(reservInfo.getCurrentDate());
 
-        System.out.println(reserv.getStartTime() + " " + reserv.getStopTime() + " " + reserv.getCurrentDate());
+        roomDao.insert(reserv);
+
+        System.out.println("In PostMapping " + reserv.getStartTime() + " " + reserv.getStopTime() + " " + reserv.getCurrentDate());
 
         return "redirect:/meetingRoom";
     }
