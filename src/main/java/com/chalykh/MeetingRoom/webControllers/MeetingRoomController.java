@@ -30,22 +30,6 @@ public class MeetingRoomController {
         this.roomDao = roomDao;
     }
 
-    @GetMapping()
-    public String meetingRoom(Model model){
-
-        ReservInfo reservInfo = new ReservInfo();
-
-        model.addAttribute("reservInfo", reservInfo);
-        model.addAttribute("reservTimeList", reservInfo.getTimeOfDay() );
-        model.addAttribute("dateWeek", reservInfo.getDateWeek());
-        model.addAttribute("reserveList", dateAndTime.getReserveList());
-
-        for(Reserv reserv : roomDao.getAll()){
-            System.out.println("in RowMapping " + reserv.getStartTime() + " " + reserv.getStopTime() + " " + reserv.getCurrentDate());
-        }
-
-        return "tableRoom.html";
-    }
 
     @PostMapping()
     public String reserve(@ModelAttribute("reservInfo")ReservInfo reservInfo, Model mode){
@@ -61,6 +45,30 @@ public class MeetingRoomController {
 
         return "redirect:/meetingRoom";
     }
+
+
+    @GetMapping()
+    public String meetingRoom(Model model){
+
+        ReservInfo reservInfo = new ReservInfo();
+
+        model.addAttribute("reservInfo", reservInfo);
+        model.addAttribute("reservTimeList", reservInfo.getTimeOfDay() );
+        model.addAttribute("dateWeek", reservInfo.getDateWeek());
+
+        for(Reserv reserv : roomDao.getAll()){
+            dateAndTime.setReserve(reserv);
+        }
+
+        model.addAttribute("reserveList", dateAndTime.getReserveList());
+
+        for(Reserv reserv : roomDao.getAll()){
+            System.out.println("in RowMapping " + reserv.getStartTime() + " " + reserv.getStopTime() + " " + reserv.getCurrentDate());
+        }
+
+        return "tableRoom.html";
+    }
+
 
 
 }

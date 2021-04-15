@@ -1,5 +1,6 @@
 package com.chalykh.MeetingRoom.prepareData;
 
+import com.chalykh.MeetingRoom.domain.Reserv;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
@@ -12,6 +13,7 @@ public class CreateDateAndTime {
     private List<String> timeOfDay;
     private List<String> dateWeek;
     private Map<String, Map<String, Boolean>> reserveList;
+    private Reserv reserv;
 
 
     public CreateDateAndTime(){
@@ -64,17 +66,15 @@ public class CreateDateAndTime {
     public void createReserve(){
 
         reserveList = new TreeMap<>();
-        Random r = new Random();
+
 
         for(int i = 0; i < timeOfDay.size(); i++){
 
             TreeMap<String, Boolean> ceil = new TreeMap<>();
             boolean bool;
             for(int j = 0; j < 7; j++ ){
-
-                bool = r.nextBoolean();
                 String str = dateWeek.get(j);
-                ceil.put(str, bool);
+                ceil.put(str, false);
             }
             String str = timeOfDay.get(i);
             reserveList.put(str, ceil);
@@ -88,6 +88,12 @@ public class CreateDateAndTime {
                 System.out.println(map.get(s1));
             }
         }*/
+
+    }
+
+    public void setReserve(Reserv reserve){
+
+
 
     }
 
